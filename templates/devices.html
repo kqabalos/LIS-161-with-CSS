@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="devices">{{ brand }} Smartphones</h1>
+<p class="devices">Browse through the list of {{ brand }} smartphone to see what fits your preference best!</p>
+<ul class="devices">
+    <li style="--accent-color:#4CAF50">
+        <div class="icon"><i class="fa-sharp fa-solid fa-bags-shopping"></i></div>
+        <div class="title">GREENHILLS</div>
+        </li>
+    {% for smartphone in smartphones %}
+    <li style="--accent-color:#4CAF50">
+    <div class="icon"><i class="fa-sharp fa-solid fa-mobile"></i></div>
+    <a class="title" href="/devices/{{ smartphone.id }}">{{ smartphone.model }}</a>
+    </li>
+    {% endfor %}
+    <li style="--accent-color:#4CAF50">
+        <div class="icon"><i class="fa-sharp fa-solid fa-bags-shopping"></i></div>
+        <div class="title">GREENHILLS</div>
+        </li>
+</ul>
+{% endblock %}
+
+
+

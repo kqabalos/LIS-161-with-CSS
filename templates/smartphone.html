@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="smartphone"> {{ smartphone.model }} </h1>
+<img src="{{smartphone.url}}">
+<ul class="smartphone">
+	<li class="card" style="--color: black; --bg-color:#FF6663">
+	  <div class="title">Chipset</div>
+	  <div class="content">{{ smartphone.chipset }}</div>
+	</li>
+	<li class="card" style="--color:black; --bg-color:#FEB144">
+	  <div class="title">Main Camera</div>
+	  <div class="content">{{ smartphone.main_camera }} </div>
+	</li>
+	<li class="card" style="--color: black; --bg-color:#FDFD97">
+	  <div class="title">Selfie Camera</div>
+	  <div class="content">{{ smartphone.selfie_camera }}</div>
+	</li>
+	<li class="card" style="--color:black; --bg-color:#9EE09E">
+	  <div class="title">Internal Memory</div>
+	  <div class="content">{{ smartphone.internal_memory }} </div>
+	</li>
+	<li class="card" style="--color:black; --bg-color:#9EC1CF">
+	  <div class="title">Battery</div>
+	  <div class="content">{{ smartphone.battery }} </div>
+	</li>
+	<li class="card" style="--color:black; --bg-color:#CC99C9">
+		<div class="title">Color</div>
+		<div class="content">{{ smartphone.color }} </div>
+	  </li>
+	<li class="card" style="--color:black; --bg-color:#FF6663">
+		<div class="title">Price</div>
+		<div class="content">{{ smartphone.price }}</div>
+	  </li>
+	  <li class="card" style="--color:black; --bg-color:#FEB144">
+		<div class="title">Condition</div>
+		<div class="content">{{ smartphone.condition }} </div>
+	  </li>
+	  <li class="card" style="--color:black; --bg-color:#FDFD97">
+		<div class="title">Reason For Selling</div>
+		<div class="content">{{ smartphone.reason_for_selling }}</div>
+	  </li>
+  </ul>
+	<form class="smartphone" action="{{ url_for('modify') }}" method="post">
+    <input type="hidden" name="smartphone_id" value="{{ smartphone.id }}">
+    <input type="submit" name="modify" value="EDIT"></input>
+    <input type="submit" name="modify" value="DELETE"></input>
+	</form>
+
+{% endblock %}
